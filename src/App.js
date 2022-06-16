@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
-
+import TDLogo from './images/TD.jpg';
+import Boton from './componentes/Boton'
 function App() {
+
+  const manejarClic = () => {
+    console.log("Clic");
+  }
+
+  const reiniciarContador = () =>{
+    console.log("Reiniciar")
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1>Hola</h1>
-      </header>
+      <div className='logo-contenedor'>
+        <img className='logo'
+        src={TDLogo}
+        alt='Logo'/>
+      </div>
+      <div className='contenedor-principal'>
+        <Boton 
+          texto="Clic"
+          esBotonDeClic={true}
+          manejarClick={manejarClic}
+        />
+
+        <Boton 
+          texto="Reiniciar"
+          esBotonDeClic={false}
+          manejarClick={reiniciarContador}
+        />
+      </div>
     </div>
   );
 }
